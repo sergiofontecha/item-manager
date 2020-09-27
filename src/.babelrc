@@ -10,5 +10,6 @@
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread",
     "@babel/plugin-transform-arrow-functions"
-  ]
+  ],
+  "ignore": ["/node_modules/", "\\.test\\.ts"]
 }
