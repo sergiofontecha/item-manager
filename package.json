@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npx babel src --out-dir lib --extensions '.ts'",
+    "build": "npx babel src --out-dir lib --extensions '.ts' --ignore ignore",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
