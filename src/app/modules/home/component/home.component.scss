@@ -1,0 +1,11 @@
+@import '../../../../styles/mixins';
+
+.home-container {
+  @include flex(flex, column, space-between);
+  app-header {
+    flex-basis: 6vw;
+  }
+  app-footer {
+    flex-basis: 15vw;
+  }
+}
