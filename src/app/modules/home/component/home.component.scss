@@ -1,0 +1,17 @@
+@import '../../../../styles/mixins';
+
+.home__container {
+  @include flex(flex, column);
+  app-header {
+    width: 100%;
+    height: 10%;
+  }
+  app-login {
+    width: 100%;
+    height: 75%;
+  }
+  app-footer {
+    width: 100%;
+    height: 15%;
+  }
+}

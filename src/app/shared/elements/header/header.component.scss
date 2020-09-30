@@ -1,0 +1,30 @@
+@import '../../../../styles/mixins';
+@import '../../../../styles/fonts';
+@import '../../../../styles/colors';
+
+header {
+  @include flex(flex, row, flex-start, center, center);
+  width: 100%;
+  height: 100%;
+  background: whitesmoke;
+  .icon__container {
+    display: flex;
+    width: 10%;
+    margin-top: 2px;
+    margin-left: 1vw;
+    img {
+      @include flex(flex, row, flex-start, center, center);
+    }
+  }
+  .title__container {
+    display: flex;
+    width: 90%;
+    p {
+      @include flex(flex, row, center, center, center);
+      margin-right: 6vw;
+      font-family: 'Acme', arial, sans-serif;
+      font-size: 4vw;
+      color: $app-darkGray;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '../../../../../styles/mixins';
+@import '../../../../../styles/fonts';
+@import '../../../../../styles/colors';
+main {
+  @include flex(flex, column, center, center, center);
+  .jumbotron {
+    @include flex(flex, column, center);
+    border: solid 5px $app-darkGray;
+    width: 50%;
+    height: 60%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    padding: 5px;
+    h1 {
+      @include flex(flex, column, flex-start, null, center);
+      height: 20%;
+      color: $app-darkGray;
+    }
+    form {
+      @include flex(flex, column, center, null, center);
+      .form-group {
+        width: 75%;
+        height: 30%;
+        margin-bottom: 3%;
+        label {
+          font-family: 'Acme', arial, sans-serif;
+          font-size: 1.5vw;
+          font-weight: 800;
+          color: $app-darkGray;
+        }
+        input {
+          height: 55%;
+          margin-top: 2%;
+          padding-left: 10px;
+          border: solid 2px $app-gray;
+          &:focus {
+            outline: none;
+          }
+          &:active {
+            outline: none;
+          }
+        }
+        input::placeholder {
+          font-family: 'Acme', arial, sans-serif;
+          font-size: 1.5vw;
+          color: $app-lightGray;
+        }
+      }
+      .button__container {
+        @include flex(flex, row, flex-end);
+        width: 25%;
+        height: 20%;
+        margin-top: 1%;
+        button {
+          background: $app-lightGreen;
+          font-family: 'Acme', arial, sans-serif;
+          font-size: 2vw;
+          font-weight: bold;
+          color: $app-darkGray;
+          border: solid 3px $app-darkGray;
+          border-radius: 10px;
+          &:focus {
+            outline: none;
+          }
+          &:active {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+}
