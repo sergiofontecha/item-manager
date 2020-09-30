@@ -1,5 +1,6 @@
 @import '../../../../styles/mixins';
 @import '../../../../styles/fonts';
+@import '../../../../styles/colors';
 
 footer {
   @include flex(flex, row, center, center, center);
@@ -10,9 +11,10 @@ footer {
     @include flex(flex, row, center, null, center);
     margin-right: 0px;
     font-family: 'Acme', arial, sans-serif;
-    font-size: 3vw;
+    font-size: 2vw;
+    color: $app-darkGray;
     img {
-      width: 5vw;
+      width: 3vw;
     }
   }
 }
