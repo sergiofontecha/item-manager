@@ -1,0 +1,57 @@
+<div class="search__container">
+  <app-header></app-header>
+  <main>
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)">
+      <div class="form-group filter-properties">
+        <label for="serachBy">Products Characteristics</label>
+        <select name="serachBy" id="#searchBy" formControlName="searchBy">
+          <option value="" selected disabled hidden>Search By...</option>
+          <option value="title">Title</option>
+          <option value="description">Description</option>
+          <option value="price">email</option>
+        </select>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Text input with dropdown button"
+          formControlName="textToMatch"
+          placeholder="Write your key words"
+        />
+      </div>
+      <div class="form-group filter-price">
+        <label for="minprice">Price Range</label>
+        <select
+          name="minPrice"
+          id="#minPrice"
+          formControlName="minPrice"
+          *ngIf="selectOptions$ | async"
+        >
+          <option value="" selected disabled hidden>Min. Price</option>
+          <option
+            *ngFor="let option of (selectOptions$ | async)?.min"
+            value="{{ option }}"
+            >{{ option }}</option
+          >
+        </select>
+        <select
+          name="maxPrice"
+          id="#maxPrice"
+          formControlName="maxPrice"
+          *ngIf="selectOptions$ | async"
+        >
+          <option value="" selected disabled hidden>Max. Price</option>
+          <option
+            *ngFor="let option of (selectOptions$ | async)?.max"
+            value="{{ option }}"
+          >
+            {{ option }}</option
+          >
+        </select>
+      </div>
+      <button type="submit">
+        <img src="../../../assets/images/lupa.svg" alt="Search-Icon" />
+      </button>
+    </form>
+  </main>
+  <app-footer></app-footer>
+</div>

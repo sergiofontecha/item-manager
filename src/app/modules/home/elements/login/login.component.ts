@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { LoginService } from '../../services/login.service';
 
@@ -11,15 +11,15 @@ import { LoginService } from '../../services/login.service';
 })
 export class LoginComponent implements OnInit {
   public title: string;
-  public userLogged: boolean;
+  public userLogged: {};
   public loginForm: any;
 
   constructor(
     private _fb: FormBuilder,
-    private _loginService: LoginService // private _router: Router
+    private _router: Router,
+    private _loginService: LoginService
   ) {
     this.title = 'Find Your Big Deal!';
-    // this.userLogged = false;
     this.loginForm = this._fb.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
@@ -29,14 +29,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(formValues: any) {
-    this.userLogged = this._loginService.userExist(
-      formValues.email,
-      formValues.password
-    );
-
-    if (this.userLogged) {
-      // this._router.navigate(['/search']);
-      console.log('login.component.ts', this.userLogged);
-    }
+    this._loginService.userExist(formValues.email, formValues.password);
+    this._loginService.cast.subscribe(userExist => {
+      if (userExist) {
+        this.userLogged = userExist;
+        this._router.navigate(['/search']);
+        this.loginForm.reset();
+      }
+    });
   }
 }

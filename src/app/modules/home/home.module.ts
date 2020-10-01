@@ -10,7 +10,7 @@ import { LoginComponent } from './elements/login/login.component';
 
 import { LoginService } from './services/login.service';
 
-export const ROUTES: Routes = [{ path: '', component: HomeComponent }];
+export const ROUTES: Routes = [{ path: 'home', component: HomeComponent }];
 
 @NgModule({
   imports: [
