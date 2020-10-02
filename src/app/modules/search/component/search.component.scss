@@ -10,6 +10,7 @@
   }
 
   main {
+    @include flex(flex, column, space-between, center, center);
     width: 100%;
     height: 75%;
     form {
@@ -19,6 +20,16 @@
       margin: 1px;
       padding: 10px;
       background: $app-lightGreen;
+    }
+    .selection-container {
+      @include flex(flex, row, space-around, center, center);
+      width: 100%;
+      height: 80%;
+      .item-conteiner {
+        @include flex(flex, column, flex-start, center, center);
+        width: 5%;
+        height: 5%;
+      }
     }
     .filter-properties {
       @include flex(flex, row, center, null, center);
@@ -30,12 +41,12 @@
         padding-left: 10px;
         border-radius: 10%;
         border: solid 2px $app-darkGray;
-      }
-      &:focus {
-        outline: none;
-      }
-      &:active {
-        outline: none;
+        &:focus {
+          outline: none;
+        }
+        &:active {
+          outline: none;
+        }
       }
       input::placeholder {
         font-family: 'Acme', arial, sans-serif;

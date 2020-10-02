@@ -52,6 +52,16 @@
         <img src="../../../assets/images/lupa.svg" alt="Search-Icon" />
       </button>
     </form>
+    <div *ngIf="itemsToShow" class="selection-container">
+      <div *ngFor="let item of itemsToShow" class="item-container">
+        <ul>
+          <li>{{ item.title }}</li>
+          <li>{{ item.description }}</li>
+          <li>{{ item.email }}</li>
+          <li>{{ item.price }}</li>
+        </ul>
+      </div>
+    </div>
   </main>
   <app-footer></app-footer>
 </div>

@@ -12,18 +12,4 @@ export class SearchService {
   getPriceOptions(): any {
     return this._httpService.get('../../../../assets/priceOptions.json');
   }
-
-  //   public sendOptions(): void {
-  //     const data: Observable<any> = this.getPriceOptions();
-
-  //     data.subscribe(
-  //       res => {
-  //         this._options.next(res);
-  //       },
-  //       err => {
-  //         console.error(err);
-  //       },
-  //       () => {}
-  //     );
-  //   }
 }
