@@ -1,11 +1,13 @@
 @import '../../../../../styles/mixins';
 @import '../../../../../styles/fonts';
 @import '../../../../../styles/colors';
+
 main {
   @include flex(flex, column, center, center, center);
   .jumbotron {
     @include flex(flex, column, center);
     border: solid 5px $app-darkGray;
+    border-radius: 10px;
     width: 50%;
     height: 60%;
     margin-top: 5%;
@@ -34,6 +36,7 @@ main {
           margin-top: 2%;
           padding-left: 10px;
           border: solid 2px $app-gray;
+          border-radius: 10px;
           &:focus {
             outline: none;
           }
