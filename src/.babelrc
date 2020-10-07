@@ -1,5 +1,5 @@
 {
-  "presets": ["@babel/env", "@babel/preset-typescript"],
+  "presets": ["@babel/preset-env", "@babel/preset-typescript"],
   "plugins": [
     [
       "@babel/plugin-proposal-decorators",
@@ -10,5 +10,6 @@
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread",
     "@babel/plugin-transform-arrow-functions"
-  ]
+  ],
+  "ignore": ["node_modules", "src/**/*.spec.ts", "src/test.ts"]
 }

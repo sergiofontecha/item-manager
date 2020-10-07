@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "npx babel src --out-dir lib --extensions '.ts' --ignore ignore",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "start": "run-p -l type-check:watch start:web",
+    "start:web": "ng serve -o",
+    "build": "run-p -l type-check build:babel",
+    "build:babel": "npx babel src --out-dir dist --extensions '.ts'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -47,6 +51,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "npm-run-all": "^4.1.5",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
