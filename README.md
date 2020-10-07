@@ -1,7 +1,5 @@
 # Item Manager Application
 
-Wallapop test
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
 
 To get the project in your local machine, just need to copy this link 'git@github.com:sergiofontecha/item-manager.git', open your shell, navigate to the path where you want to save the respository clone and write the command 'git clone git@github.com:sergiofontecha/item-manager.git'. After that you just need to navigate to the project, launch the command npm install to install all project dependencies and after this task ends, finally use the command 'ng serve -o' and you will see the app web in a tab of your browser.
